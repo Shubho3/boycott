@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:timetrekz/Screens/Home/bottom_bar.dart';
 
-const appPrimaryColor = Color(0xFF4633D6);
+const appPrimaryColor = Color(0xFFA10000);
 const appPrimaryLightColor = Color(0xFFFFFFFF);
 const appPrimaryTextColor = Color(0xFF09051C);
 const appPrimaryTextColorDim = Color(0xFF4633D6);

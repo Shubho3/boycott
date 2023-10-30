@@ -7,16 +7,15 @@ import '../../Apis/Webservices.dart';
 import '../../Models/LoginResponse.dart';
 import '../../constants.dart';
 import '../../widgets/CustomTextInputField.dart';
-import 'SignupScreen.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
   Login createState() => Login();
 }
 
-class Login extends State<LoginScreen> {
+class Login extends State<SignupScreen> {
 
   @override
   void initState() {
@@ -48,37 +47,8 @@ class Login extends State<LoginScreen> {
           width: width-10,
           decoration: const BoxDecoration(color: appPrimaryBackgroundCardColor),
           child: SingleChildScrollView(
-           physics: NeverScrollableScrollPhysics(),
             child: Column(
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: appPrimaryBackgroundCardColor,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.zero,
-                          bottomRight: Radius.zero),
-                      color: appPrimaryBackgroundCardColor),
-                  child: Column(children: [
-                    const SizedBox(
-                      height: 65,
-                    ),
-                    Center(
-                      child: SizedBox(
-                        height: 65,
-                        width: 120,
-                        child: Image.asset(
-                          'assets/images/Logo.png',
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                  ]),
-                ),
                 Container(
                   height: height,
                   width: width,
@@ -94,6 +64,36 @@ class Login extends State<LoginScreen> {
                       color: appPrimaryBackgroundColor),
                   child: SingleChildScrollView(
                     child: Column(children: [
+
+                      Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: appPrimaryBackgroundCardColor,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                                bottomLeft: Radius.zero,
+                                bottomRight: Radius.zero),
+                            color: appPrimaryBackgroundCardColor),
+                        child: Column(children: [
+                          const SizedBox(
+                            height: 65,
+                          ),
+                          Center(
+                            child: SizedBox(
+                              height: 65,
+                              width: 120,
+                              child: Image.asset(
+                                'assets/images/Logo.png',
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 25,
+                          ),
+                        ]),
+                      ),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -103,7 +103,7 @@ class Login extends State<LoginScreen> {
                                 padding: const EdgeInsets.only(
                                     left: 15, right: 20, top: 30, bottom: 5),
                                 child: Text(
-                                  'Login to your Account',
+                                  'SignUp for Free',
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.poppins(
                                       fontSize: 25,
@@ -115,6 +115,31 @@ class Login extends State<LoginScreen> {
                           ),
                         ],
                       ),
+
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 20,left:20 ),
+                        child: CustomTextField(
+                          controller: _text,
+                          hintText: 'First Name',
+                          label: 'First Name',
+                          keyboardtype: TextInputType.name,
+
+                        ),
+                      ), const SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 20,left:20 ),
+                        child: CustomTextField(
+                          controller: _text,
+                          hintText: 'Last Name',
+                          label: 'Last Name',
+                          keyboardtype: TextInputType.name,
+                        ),
+                      ),
                       const SizedBox(
                         height: 30,
                       ),
@@ -124,6 +149,8 @@ class Login extends State<LoginScreen> {
                           controller: _text,
                           hintText: 'Enter Email',
                           label: 'Email',
+                          keyboardtype: TextInputType.emailAddress,
+
                         ),
                       ),
                       const SizedBox(
@@ -136,7 +163,9 @@ class Login extends State<LoginScreen> {
                           controller: _text,
                           hintText: 'Enter Password',
                           label: 'Password',
-                         /* suffixIcon: hide?"assets/images/hide.png":"assets/images/show.png",
+                          keyboardtype: TextInputType.visiblePassword,
+
+                          /* suffixIcon: hide?"assets/images/hide.png":"assets/images/show.png",
                           onTapsuffix: (){
                             setState(() {
                               hide=!hide;
@@ -146,19 +175,7 @@ class Login extends State<LoginScreen> {
 
                         ),
                       ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Forget Password?',
-                          style: GoogleFonts.poppins(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w400,
-                              color: appPrimaryTextColor),
-                        ),
-                      ),
+
                       const SizedBox(
                         height: 5,
                       ),
@@ -316,7 +333,7 @@ class Login extends State<LoginScreen> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => SignupScreen()));
+                               //   Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPassScreen()));
                                 },
                                 child: Text('SIGN UP',
                                     style: GoogleFonts.poppins(
