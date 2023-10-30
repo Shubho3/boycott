@@ -6,6 +6,7 @@ import 'package:boycott/widgets/loader.dart';
 import '../../Apis/Webservices.dart';
 import '../../Models/LoginResponse.dart';
 import '../../constants.dart';
+import 'LoginForm.dart';
 //import 'otp_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -128,6 +129,17 @@ class Login extends State<LoginScreen> {
                           const SizedBox(
                             height: 30,
                           ),
+                          const Row(
+                            children:  [
+                              Spacer(),
+                              Expanded(
+                                flex: 8,
+                                child: LoginForm(),
+                              ),
+                              Spacer(),
+                            ],
+                          ),
+
                         /*  Container(
                             height: 50,
                             width: MediaQuery.of(context).size.width * 0.80,
